@@ -220,6 +220,9 @@ func segmentGit(p *powerline) []pwl.Segment {
 	}
 
 	if len(p.symbols.RepoBranch) > 0 {
+		if strings.ToLower(branch) == "master" {
+			branch = "♂" + branch + "♂"
+		}
 		branch = fmt.Sprintf("%s %s", p.symbols.RepoBranch, branch)
 	}
 
